@@ -11,7 +11,6 @@ def user_prompt(prompt_text):
     :return: read value
     """
     result = input(prompt_text)
-    # TODO: implement input validation here?
     return result
 
 
@@ -59,6 +58,19 @@ def read_list_file(path):
         return lines
 
 
+def test_print(list_lines):
+    """
+    Checks for list validity and prints the list if valid
+    :param list_lines: list of the lines of text to print.
+    """
+    if not list_lines:  # Faulty file.
+        print("Error: faulty file.")
+        return
+
+    else:
+        line_printer(list_lines)
+
+
 def line_printer(lines):
     """
     Prints lines of a list line by line.
@@ -73,13 +85,8 @@ def main():
     list_path = user_prompt("Give path to list file:\n> ")
     # Get list (of entries) from file.
     list_entries = read_list_file(list_path)
-
     # Test print the list.
-    if not list_entries:  # Faulty file.
-        return
-
-    else:
-        line_printer(list_entries)
+    test_print(list_entries)
 
 
 main()
