@@ -66,7 +66,7 @@ class ListInfo:
         """
         self.__name = name
         self.__note = note
-        self.update_time()  # Update time.
+        self.update_time()
 
     def update_time(self):
         """
