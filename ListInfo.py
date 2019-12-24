@@ -21,7 +21,7 @@ class ListInfo:
         """
         self.__name = name
         self.__note = note
-        self.__items = []  # Filled later.
+        self.__entries = []  # Filled later.
 
         # Existing lists have a creation time, make one for the rest.
         if not time_c:
@@ -44,7 +44,7 @@ class ListInfo:
         """
         return {
             "name": self.__name,
-            "entries": self.__items,
+            "entries": self.__entries,
             "notes": self.__note,
             "time_c": self.__time_c,
             "time_u": self.__time_u
@@ -55,7 +55,7 @@ class ListInfo:
         Adds new list entry.
         :param item: list entry object OR another list.
         """
-        self.__items.append(item)
+        self.__entries.append(item)
         self.update_time()
 
     def update_info(self, name, note=""):
