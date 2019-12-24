@@ -16,6 +16,7 @@ class ListInfo:
         :param name: name of list
         :param note: note for list
         :param time_c: creation time, false by default when creating new list.
+                        Objects can come from file, hence doing it this way.
         :param time_u: update time, false by default when creating new list.
         """
         self.__name = name
@@ -24,7 +25,7 @@ class ListInfo:
 
         # Existing lists have a creation time, make one for the rest.
         if not time_c:
-            self.__time_c = strftime(CONST['time_format'])  # Time created
+            self.__time_c = strftime(CONST['time_format'])
 
         else:
             self.__time_c = time_c
