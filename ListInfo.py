@@ -45,7 +45,7 @@ class ListInfo:
         return {
             "name": self.__name,
             "entries": self.__entries,
-            "notes": self.__note,
+            "note": self.__note,
             "time_c": self.__time_c,
             "time_u": self.__time_u
         }
