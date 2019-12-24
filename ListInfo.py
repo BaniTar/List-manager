@@ -72,4 +72,4 @@ class ListInfo:
         """
         Sets the last updated value to be the current date.
         """
-        self.__time_u = strftime(CONST['date_format'])
+        self.__time_u = strftime(CONST['time_format'])
