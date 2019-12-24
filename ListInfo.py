@@ -10,7 +10,7 @@ CONST = {
 
 
 class ListInfo:
-    def __init__(self, name, note="", time_c="", time_u=""):
+    def __init__(self, name, note="", deadline="", time_c="", time_u=""):
         """
         Create list object.
         :param name: name of list
@@ -37,6 +37,9 @@ class ListInfo:
         else:
             self.__time_u = time_u
 
+        # Set deadline, blank is none.
+        self.__deadline = deadline
+
     def give_info(self):
         """
         Gives complete contents to the caller.
@@ -47,7 +50,8 @@ class ListInfo:
             "entries": self.__entries,
             "note": self.__note,
             "time_c": self.__time_c,
-            "time_u": self.__time_u
+            "time_u": self.__time_u,
+            "deadline": self.__deadline
         }
 
     def add_item(self, item):
